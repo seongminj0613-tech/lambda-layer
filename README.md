@@ -6,6 +6,10 @@
 
 [모니터링 대시보드](http://15.165.17.218:3000/public-dashboards/97b5462a12b54bf9b827b07eeee699f4)
 
+[🌐 웹 데모](https://dk1k75g0ji3vw.cloudfront.net) 
+
+[📱 APK 다운로드](https://drive.google.com/file/d/1jJNRF2CCVcCKSpdIPUODjWL6F5exxJ-T/view?usp=sharing) 
+
 [🐍 Backend 레포](https://github.com/seongminj0613-tech/ai-call-assistant)
 
 ---

@@ -4,6 +4,8 @@
 
 [📖 메인 README](https://github.com/seongminj0613-tech/business-ai-assistant) 
 
+[모니터링 대시보드](http://15.165.17.218:3000/public-dashboards/97b5462a12b54bf9b827b07eeee699f4)
+
 [🐍 Backend 레포](https://github.com/seongminj0613-tech/ai-call-assistant)
 
 ---

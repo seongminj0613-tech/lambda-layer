@@ -2,15 +2,15 @@
 
 > 소상공인 AI 통화 요약 서비스의 **AWS Lambda Layer** — Python 의존성 패키징
 
-[📖 메인 README](https://github.com/seongminj0613-tech/business-ai-assistant) 
-
-[모니터링 대시보드](http://15.165.17.218:3000/public-dashboards/97b5462a12b54bf9b827b07eeee699f4)
-
 [🌐 웹 데모](https://dk1k75g0ji3vw.cloudfront.net) 
 
 [📱 APK 다운로드](https://drive.google.com/file/d/1jJNRF2CCVcCKSpdIPUODjWL6F5exxJ-T/view?usp=sharing) 
 
+[📊 모니터링 대시보드](http://15.165.17.218:3000/public-dashboards/97b5462a12b54bf9b827b07eeee699f4)
+
 [🐍 Backend 레포](https://github.com/seongminj0613-tech/ai-call-assistant)
+
+[📖 메인 README](https://github.com/seongminj0613-tech/business-ai-assistant)
 
 ---
 
@@ -33,7 +33,8 @@ Lambda 함수 코드와 의존성을 분리하면:
 | `pymysql` | 1.1.2 | RDS MySQL 연결 |
 | `requests` | 2.33.1 | CLOVA Speech / OpenAI / Kakao API 호출 |
 
-> Python 표준 라이브러리(`boto3`, `json` 등)는 Lambda 런타임에 기본 포함되므로 본 레이어에서 제외.
+> `boto3`, `json` 등은 Lambda 런타임에 기본 포함되므로 본 레이어에서 제외.
+> Redis 클라이언트는 별도 레이어(`call-recorder-redis-layer`)로 분리 관리합니다.
 
 ---
 
@@ -71,6 +72,7 @@ chmod +x build.sh
 - **Python 3.12**에서 빌드 권장 (Lambda 런타임과 일치)
 - **Linux 환경 빌드를 권장**합니다. Lambda는 Amazon Linux 환경에서 실행되므로, 네이티브 확장 모듈(예: C 확장)이 포함된 패키지는 Linux에서 빌드해야 호환성이 보장됩니다.
 - Windows에서 빌드 시 일부 패키지(예: `cryptography`)에서 ABI 불일치로 import 에러가 발생할 수 있습니다. 이 경우 Docker 또는 WSL2 Linux 환경에서 빌드하세요.
+- `pip install` 시 `--platform manylinux2014_x86_64 --only-binary=:all:` 옵션으로 Linux용 바이너리를 강제하면 Windows에서도 호환 빌드가 가능합니다.
 
 ---
 
